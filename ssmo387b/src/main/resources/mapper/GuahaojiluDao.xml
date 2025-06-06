@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.GuahaojiluDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.GuahaojiluEntity" id="guahaojiluMap">
+        <result property="yuyuedanhao" column="yuyuedanhao"/>
+        <result property="yishenggonghao" column="yishenggonghao"/>
+        <result property="yishengxingming" column="yishengxingming"/>
+        <result property="tupian" column="tupian"/>
+        <result property="keshi" column="keshi"/>
+        <result property="guahaojine" column="guahaojine"/>
+        <result property="guahaoshuliang" column="guahaoshuliang"/>
+        <result property="guahaoshijian" column="guahaoshijian"/>
+        <result property="yuyuejiuzhen" column="yuyuejiuzhen"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="xingming" column="xingming"/>
+        <result property="shouji" column="shouji"/>
+        <result property="zhengzhuangmiaoshu" column="zhengzhuangmiaoshu"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="ispay" column="ispay"/>
+        <result property="clicknum" column="clicknum"/>
+        <result property="userid" column="userid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.GuahaojiluVO" >
+		SELECT * FROM guahaojilu  guahaojilu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.GuahaojiluVO" >
+		SELECT  guahaojilu.* FROM guahaojilu  guahaojilu
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.GuahaojiluView" >
+
+		SELECT  guahaojilu.* FROM guahaojilu  guahaojilu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.GuahaojiluView" >
+		SELECT * FROM guahaojilu  guahaojilu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
